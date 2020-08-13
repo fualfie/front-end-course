@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>方法的綁定</h1>
+    <h4>第一種：標籤上</h4>
+    <button onclick="alert('按屁按')">按我</button>
+    <h4>第二種：html物件綁定方法</h4>
+    <button id="btn1">按我</button>
+    <h4>第三種：html物件增加事件監聽器</h4>
+    <button id="btn2">按我</button>
+    <script>
+        function clickme(){
+            alert('按屁按');
+        }
+        
+        document.getElementById('btn1').onclick = clickme;
+        
+        document.getElementById('btn2').addEventListener('click', clickme);
+    </script>
+    
+</body>
+</html>

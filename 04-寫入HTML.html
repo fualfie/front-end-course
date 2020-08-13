@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bgRed {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main">這是預設的內容</div>
+    <button onclick="clickme1()">innerHTML</button>
+    <button onclick="clickme2()">innerText</button>
+    <button onclick="clickme3()">document.write</button>
+
+
+    <script>
+        function clickme1(e) {
+            document.getElementById('main').innerHTML = '<h1>Go Go Lamigo</h1>'
+        }
+        function clickme2(e) {
+            document.getElementById('main').innerText = '<h1>Go Go Lamigo</h1>'
+        }
+        function clickme3(e) {
+            document.write('<h1>Go Go Lamigo</h1>')
+        }
+
+    </script>
+
+
+</body>
+
+</html>

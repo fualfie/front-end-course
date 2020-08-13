@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bgRed {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="main">這是一個DIV</div>
+    </div>
+
+
+    <script>
+
+        function realSalary(number) {
+            var tmp = parseInt(number)
+            var real = tmp * 1000
+            return real * 0.87
+        }
+
+        function salaryUpup(salary) {
+            return salary * 1.1
+        }
+
+        var salary = '40';
+        var mySalary = realSalary(salary)
+        console.log(salary)
+
+        var interval = setInterval(function () {
+            mySalary = salaryUpup(mySalary)
+            console.log(mySalary)
+        }, 10 * 1000)
+
+        setTimeout(function (params) {
+            clearInterval(interval)
+        }, 10 * 10 * 1000)
+
+    </script>
+
+
+</body>
+
+</html>

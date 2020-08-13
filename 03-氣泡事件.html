@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bgRed {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h5>Bubbling 氣泡事件 與 Capture 捕捉事件</h5>
+    <div id="01" style="height:250px; width:250px; background: red;">
+        這是第一層DIV
+        <div id="02" style="height:200px; width:200px; background: blue;">
+            這是第二層DIV
+            <div id="03" style="height:150px;; width:150px; background: green;">
+                這是第三層DIV
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function clickme1(e) {
+            e.stopPropagation(); //破解氣泡事件 終止傳遞
+            alert('01');
+        }
+        function clickme2(e) {
+            e.stopPropagation(); //破解氣泡事件 終止傳遞
+            alert('02');
+        }
+        function clickme3(e) {
+            e.stopPropagation(); //破解氣泡事件 終止傳遞
+            alert('03');
+        }
+        //bubbling由最上層按到最下層
+        document.getElementById('01').addEventListener('click', clickme1, false)
+        document.getElementById('02').addEventListener('click', clickme2, false)
+        document.getElementById('03').addEventListener('click', clickme3, false)
+
+        //capture由最下層按到最上層
+        // document.getElementById('01').addEventListener('click', clickme1, true)
+        // document.getElementById('02').addEventListener('click', clickme2, true)
+        // document.getElementById('03').addEventListener('click', clickme3, true)
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bgRed {
+            background: red;
+        }
+    </style>
+</head>
+
+<body>
+    請輸入您的帳號密碼<br>
+    帳號: <input id="account" type="text"><br>
+    密碼: <input id="password" type="password"><br>
+    <input id="login" type="submit" value="登入">
+
+    <script>
+
+        function printValue() {
+            var value = document.getElementById('account').value
+            console.log(value)
+        }
+
+        function login() {
+            var info = '帳號: ' + document.getElementById('account').value
+                     + '密碼: ' + document.getElementById('password').value;
+            console.log(info)
+        }
+
+        document.getElementById('login').onclick = login
+
+        document.getElementById('account').onchange = printValue
+        document.getElementById('password').onkeyup = function (event) {
+            if (event.keyCode == 13) {
+                login()
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>

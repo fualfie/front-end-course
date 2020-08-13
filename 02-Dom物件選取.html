@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .bgRed{
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <h5>標籤上的屬性</h5>
+    <input id="test" class="test" type="text" name="test" value="">
+
+    <h5>用id取得物件</h5>
+    <input id="input01" type="text" name="account" value="">
+    <button onclick="click01()">按我</button>
+    
+    <h5>用name取得物件</h5>
+    <input type="checkbox" name="like" value="apple">apple
+    <input type="checkbox" name="like" value="orange">orange
+    <input type="checkbox" name="like" value="banana">banana
+    <button onclick="click02()">按我</button>
+    
+    <h5>用class取得物件</h5>
+    <div class="bgRed">這是一個DIV</div>
+    <span class="bgRed">這是一個DIV</span>
+    <p class="bgRed">這是一個DIV</p>
+    <h6 class="bgRed">這是一個DIV</h6>
+    <button onclick="click03()">按我</button>
+    
+    <h5>用tag取得物件</h5>
+    <ol>
+        <li>這是一段文字</li>
+        <li>gogo</li>
+        <li>lamigo</li>
+    </ol>
+    <button onclick="click04()">按我</button>
+
+    <script>
+        function click01(){
+            //不是陣列
+            var account = document.getElementById('input01')
+            console.log(account)
+            console.log('value= ' + account.value)
+        }
+        
+        function click02(params) {
+            //會是陣列
+            var like = document.getElementsByName('like')
+            console.log(like)
+            console.log('value= ' + like[0].value)
+        }
+        
+        function click03(params) {
+            //會是陣列
+            var bgRed = document.getElementsByClassName('bgRed')
+            for (var i = 0; i < bgRed.length; i++) {
+                console.log(bgRed[i])
+                bgRed[i].style.background = 'blue';   
+            }
+            console.log(like)
+        }
+        
+        function click04(params) {
+            //會是陣列
+            var li = document.getElementsByTagName('li')
+            for (var i = 0; i < li.length; i++) {
+                console.log(li[i])
+                li[i].style.fontSize = '20px';   
+            }
+        }
+        
+    </script>
+
+    
+</body>
+</html>
